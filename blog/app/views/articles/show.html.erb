@@ -1,0 +1,48 @@
+<style type="text/css">
+  .close {
+  position: relative;
+  float: right;
+  width: 16px;
+  right: 10px;
+  height: 16px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  right: 10px;
+  content: ' ';
+  height: 16px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+</style>
+<h1>Show Articles</h1>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title%>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<hr>
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a commnet:</h2>
+<%= render 'comments/form' %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<hr>
+<p>Find me in app/views/articles/show.html.erb</p>

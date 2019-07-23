@@ -1,0 +1,19 @@
+<div style="max-width: 800px; border: 1px solid grey;padding-left: 5px; margin-bottom: 10px;border-Radius: 8px">
+  <p>
+  <%=
+    link_to '',
+    #this is also work!
+    #article_comment_path(@article, comment),
+    [comment.article, comment],
+    method: :delete,
+    class: 'close',
+    data: { confirm: 'Are you sure?' }
+  %>
+  </p>
+  <p>
+    <strong>Commenter:</strong><%= comment.commenter %>
+  </p>
+  <p>
+    <strong>Comment:</strong><%= comment.body%>
+  </p>
+</div>
